@@ -1,4 +1,5 @@
 FROM node:lts
+WORKDIR /app
 RUN apt-get update
 RUN apt-get install openjdk-11-jre curl -y
 RUN npm i -G firebase-tools
