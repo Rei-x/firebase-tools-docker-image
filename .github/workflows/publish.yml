@@ -11,7 +11,9 @@ name: Publish Docker image
 
 on:
   push:
-    branch: ["main"]
+    branches: ["main"]
+  schedule:
+    - cron: "0 6 * * *"
 
 jobs:
   push_to_registry:
