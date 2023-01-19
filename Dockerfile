@@ -3,7 +3,7 @@ WORKDIR /app
 RUN apt-get update
 RUN apt-get install openjdk-11-jre curl -y
 RUN npm i -G firebase-tools
-RUN firebase setup:emulators:database && \
+RUN npx firebase setup:emulators:database && \
     firebase setup:emulators:firestore && \
     firebase setup:emulators:pubsub && \
     firebase setup:emulators:storage
