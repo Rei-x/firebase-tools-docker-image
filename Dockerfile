@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get install openjdk-11-jre curl -y
 RUN npm i -G firebase-tools
 RUN npx firebase setup:emulators:database && \
-    firebase setup:emulators:firestore && \
-    firebase setup:emulators:pubsub && \
-    firebase setup:emulators:storage
+    npx firebase setup:emulators:firestore && \
+    npx firebase setup:emulators:pubsub && \
+    npx firebase setup:emulators:storage
 SHELL ["/bin/bash", "-c"]
 ENV BASH_ENV ~/.bashrc
 # needed by volta() function
