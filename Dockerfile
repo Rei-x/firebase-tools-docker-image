@@ -1,13 +1,11 @@
 FROM node:lts
 RUN apt-get update
-RUN apt-get install openjdk-11-jre curl -y && \
-    npm i -G firebase-tools && \
-    firebase setup:emulators:database && \
+RUN apt-get install openjdk-11-jre curl -y
+RUN npm i -G firebase-tools
+RUN firebase setup:emulators:database && \
     firebase setup:emulators:firestore && \
     firebase setup:emulators:pubsub && \
-    firebase setup:emulators:storage && \
-    firebase -V && \
-    java -version
+    firebase setup:emulators:storage
 SHELL ["/bin/bash", "-c"]
 ENV BASH_ENV ~/.bashrc
 # needed by volta() function
